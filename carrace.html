@@ -1,0 +1,29 @@
+<script>
+
+function Car(make, horsePower, weight){
+	this.make = make
+	this.horsePower = horsePower
+	this.weight = weight
+	this.distance = 0
+	this.traveled = function(){
+
+		return Math.floor((Math.random() * 10)) * horsePower / weight 
+
+	}
+  }
+	var BMW = new Car("BMW", 320, 3240)
+	var AUDI = new Car("Audi", 298, 2980)
+	
+	while (BMW.distance < 1000 && AUDI.distance < 1000){
+		BMW.distance += BMW.traveled()
+		AUDI.distance += AUDI.traveled()
+		console.log("BMW distance: " + BMW.distance + " AUDI.distance: " + AUDI.distance)
+	}
+
+	if (BMW.distance >= 1000)
+		alert(BMW.make + " Wins!")
+
+	else if(AUDI.distance >= 1000)
+		alert(AUDI.make + " Wins!")
+
+</script>
